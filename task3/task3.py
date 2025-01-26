@@ -138,7 +138,6 @@ bm_time1_non_existing = measure_time(boyer_moore_search, text1, non_existing_pat
 kmp_time1_non_existing = measure_time(kmp_search, text1, non_existing_pattern)
 rk_time1_non_existing = measure_time(rabin_karp_search, text1, non_existing_pattern)
 
-# Результати для статті 2
 bm_time2_existing = measure_time(boyer_moore_search, text2, existing_pattern)
 kmp_time2_existing = measure_time(kmp_search, text2, existing_pattern)
 rk_time2_existing = measure_time(rabin_karp_search, text2, existing_pattern)
@@ -147,7 +146,6 @@ bm_time2_non_existing = measure_time(boyer_moore_search, text2, non_existing_pat
 kmp_time2_non_existing = measure_time(kmp_search, text2, non_existing_pattern)
 rk_time2_non_existing = measure_time(rabin_karp_search, text2, non_existing_pattern)
 
-# Виведення результатів
 print("Стаття 1:")
 print(f"Боєра-Мура (існуючий підрядок): {bm_time1_existing}")
 print(f"Кнута-Морріса-Пратта (існуючий підрядок): {kmp_time1_existing}")
@@ -163,3 +161,20 @@ print(f"Рабіна-Карпа (існущий підрядок): {rk_time2_exi
 print(f"Боєра-Мура (вигаданий підрядок): {bm_time2_non_existing}")
 print(f"Кнута-Морріса-Пратта (вигаданий підрядок): {kmp_time2_non_existing}")
 print(f"Рабіна-Карпа (вигаданий підрядок): {rk_time2_non_existing}")
+
+'''
+St1:
+Алгоритм Боєра-Мура показав найкращі результати як для існуючого, 
+так і для вигаданого підрядка. Це пов'язано з тим, що він ефективно пропускає непотрібні порівняння
+за допомогою таблиці зсувів,що особливо корисно для довгих текстів
+St2:
+Алгоритм Рабіна-Карпа виявився найшвидшим для пошуку існуючого підрядка,
+оскільки він використовує хешування для швидкого порівняння підрядків.
+
+Алгоритм Кнута-Морріса-Пратта показав найкращий результат для вигаданого підрядка, 
+що свідчить про його стабільну продуктивність у випадках, коли підрядок відсутній у тексті.
+Найшвидший алгоритм для статті 1: Боєра-Мура.
+Найшвидший алгоритм для статті 2: Рабіна-Карпа (для існуючого підрядка) 
+та Кнута-Морріса-Пратта (для вигаданого підрядка).
+
+'''
